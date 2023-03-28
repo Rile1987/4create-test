@@ -17,7 +17,6 @@ export class UserStore extends EntityStore<UserState, User> {
       { id: Math.floor(Math.random() * 1000), name: 'Pera', active: false },
       { id: Math.floor(Math.random() * 1000), name: 'Laza', active: false },
     ]);
-    console.log(this);
   }
 
 
