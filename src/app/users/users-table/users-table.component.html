@@ -1,6 +1,7 @@
 <h1>Users List</h1>
 <p>
   <button 
+    class="add-user-button"
     type="button"  
     (click)="openAddUserModal()" 
     [disabled]="canAddUser$ | async"
