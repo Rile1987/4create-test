@@ -1,0 +1,36 @@
+<h1>Users List</h1>
+<p>
+  <button 
+    type="button"  
+    (click)="openAddUserModal()" 
+    [disabled]="canAddUser$ | async"
+  >
+    Add User
+  </button>
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users$ | async">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>
+        <button
+          class="btn btn-sm"
+          [class.btn-success]="user.active"
+          [class.btn-secondary]="!user.active"
+          type="button"
+          (click)="toggleActive(user)"
+        >
+          {{ user.active ? 'Active' : 'Inactive' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

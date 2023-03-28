@@ -1,0 +1,20 @@
+<ng-container *ngIf="display$ | async as display">
+  <section [class.open]="display === 'open'"
+           (click)="close()">
+    <div (click)="$event.stopPropagation()">
+      <button class="close"
+              type="button" 
+              (click)="close()">X</button>
+        <h2>Add User</h2>
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" [(ngModel)]="name" required />
+          </div>
+          <button type="submit">Save</button>
+          <button type="button" (click)="close()">Cancel</button>
+        </form>
+    </div>
+  </section>
+</ng-container>
+
